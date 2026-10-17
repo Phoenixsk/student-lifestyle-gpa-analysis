@@ -1,0 +1,303 @@
+---
+title: "Final project with code chunks"
+author: "Phoenix Khamvongsa"
+date: "2025-12-06"
+output: html_document
+---
+
+authors:
+Phoenix Khamvongsa 
+Veer Shukla
+Alvin Bui
+
+# 1. Abstract
+
+For this project, we examined how non-academic lifestyle factors can influence student academic performance, specifically sleep quality, physical habits, and mental health. The results revealed that optimal performance was achieved with 8 hours of sleep per day, whereas insufficient and excessive sleep correlated with lower academic performance. Among the physical habits (Exercise, Social Interaction, and diet), exercise showed the strongest positive correlation with academic success. In contrast, social interaction showed a slightly negative correlation, possibly due to reduced study time. Diet had a negligible effect on academic performance. The mental health analysis showed us a consistent stress-to-academic-performance relationship. We found that people who were moderately stressed performed best. Additionally, we learned that in many cases its possible for something to have a negative correlation but there is still an optimal value that provides a higher performance for every variable.
+
+# 2. Introduction
+
+Well-being and its effects on our personal and professional lives is something that has been discussed for centuries. In the post-COVID world, topics like mental health and bad habits come up a lot more often, and many research articles are being published in relation to seemingly normalized actions like browsing the internet and playing video games. However, many people who fall into categorizes of negative academic performance and mental issues are in a young age group, between 18 and 25. This is shown in phenomena like the "loneliness epidemic," a recent trend that shows that young Americans are getting lonelier and more stressed. As college students, we know the importance of being able to have a healthy relationship with school and have time to do our hobbies such as spending time with friends. While many publications are made to focus on specific issues and their relation to performance, we wanted to focus on specific variables and if they indicate academic success. There is more pressure than ever to perform at school, but there is a question of why so many people don't rise up to it and what can be done to make this happen. To answer this question, we posed three research questions that could help us understand what variables go into a successful student: 1. What is the relationship between sleep and GPA? 2. What are the effects of physical and study habits on GPA? 3. What are the effects of stress on GPA? Our hope through this project is to see a relationship that focusing on a certain few aspects outside of school can lead to increased performance in school. 
+
+# 3. Data Sources
+
+## Sources of the Data
+
+The datasets used in our analysis were found on open-source platforms such as Kaggle and Github. We aimed to use sets with more than 30 up votes for legitimacy and from a reputable source, for example a professor at a reputed school.
+
+### Dataset Sources by Research Question
+
+1. RQ1
+- [Link1]([https://www.kaggle.com/code/sulaniishara/student-stress-performance-insights/input)
+- [Link2](https://www.kaggle.com/code/jayrdixit/student-mental-health/input)
+
+2. RQ2
+- [Link1](https://baselight.app/u/kaggle/dataset/steve1215rogg_student_lifestyle_dataset)
+- [Link2](https://www.kaggle.com/datasets/aryan208/student-habits-and-academic-performance-dataset)
+
+3. RQ3
+- [Link1](https://www.kaggle.com/code/jayrdixit/student-mental-health/input)
+- [Link2](https://www.kaggle.com/datasets/ziya07/student-mental-health-and-resilience-dataset/data)
+
+
+## Data collection
+
+Individual group members collected data by searching the web. Most of the datasets were contributed by individual contributers on Kaggle. 
+
+## Usage Permissions
+
+Since the data was uploaded on Kaggle, an open-source website which encourages downloads, they are either free to use or have a creative commons license.
+
+## Dataset Representations
+
+Each dataset represents a college which has had data collected from it through surveys.They usually contain demographic information like Male or Female, age, etc.; along with information specific to each set such as GPA, attendance, stress, depression, and anxiety. Most of these are self-reported, which is also representative of our stakeholders, as students generally determine whether they are successful or not.
+
+# 4. Data
+
+## Rows and Columns:
+
+For RQ1, our datasets are 2000x8 and 7023x20. For RQ2, our datasets are 2000x8, and while the original second set was 80000x31, we randomly sampled 2000. Finally, the dimensions of the third datset were 7022x20 and 500x13.
+Each row represent a student. Relevant variables are physical data, stress levels, and sleep hours. Some of the data is implausible as the data is self-reported, so there are inaccuracies and estimations.
+
+## Why These Datasets
+
+We chose these data sets since we felt that they covered the most breadth of information, and we large enough that we could consider a large demographic population. They support our questions because each set was picked due to their focus specifically on one of our variables.
+
+# 5. Method
+
+## Data Cleaning
+
+Our data cleaning process first started with removing all columns unnecessary to the analysis we wanted to focus on. This was done by using select9) and mutate() to remove, replace, and rename columns. We also used rbind() and cbind() to join the datasets. While we could have used merge, we felt that the data was too clear to do so. Surprisingly, many of the datasets did not include categories such as age or degree. As a result, we considered the people in the dataset to be undergraduates who were between the ages of 18-21, as there would usually be a "Major" column to differentiate by.
+
+## Technical Decisions
+
+We decided to remove data that was unnecessary to our research questions. For example, while male and female are different, we decided to remove this category because all students generally have an equal chance at classwork. Similarly, we removed information like age as college coursework is graded on a consistent scale.
+
+##  Variables
+
+Variables we used for our research questions included sleep data, socialization rates, physical activity rates, diet rates, attendance, stress, and GPA.
+
+## Analysis
+
+To conduct our analysis, we used regression on plots to determine if there is a correlation in the data points. Since there are so many points located in a relatively small range, we found that even small overall increases or decreases could indicate a large difference in relationship between the variables.
+
+## Challenges
+
+We were limited by the fact that we don;t know if the data is from US or foreign universities, which is important because foreign universities may have different curriculum. Additionally, since this is not a well-known topic and gathering a large quantity of information is difficult, there are only a few reputable data sets online that included our variables for analysis.When we found a dataset with a variable, it might not include GPA or vice versa, therefore this limited our range of options we had to gauge an accurate trend.
+
+## Regression Analysis
+
+For RQ2, we applied regression analysis to fit a curve to the data points. This showed that in general more studying leads to higher GPA, but the outcomes were skewed by clumped data points. Therefore, the curve shows that it is not a direct linear increase and is highly dependent on other variables.
+
+## Discussion 
+The meaning of Alvins results was does sleep quality effect gpa, 8 to 7 hours of sleep was the best amount but there was a decline of more hours of sleep. The decline is because they slept more so they had less time to study. The meaning of Phoenix's results on how does stress level effect gpa was that there was an optimal level of stress level, at around 2.5 which shows that a certain amount of stress helps increase concentration.We can conclude that there is positive correlation between study hours and GPA, where as study time increases the GPA also increases. Additionally, we find that for daily physical activity between 0 and 2 hours, there is a GPA increase, followed by a decrease which could mean that it cuts into studying time.
+
+## Summary 
+
+The takeaway from this research is that having balance sometimes is the key to having academic success however there are certain positive and negative linear trends that will lead to academic success or failure. Our analysis reveals that students have an optimal level of sleep in order to succeed, the more physical activity leads to less academic success showing a negative trendline, there is a certain amount of stress an optimal amount that shows the best performance for academic success. Performing as best as possible can come from moderation: approximately 8 hours of sleep and moderate stress levels all correlate with higher GPAs. However there are also some linear trends such as doing more does better or doing less does worse and vice versa.
+
+### Research question 2, Physical effects on study habits:
+
+```{r, warning = FALSE}
+library(stringr)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+lifestyle_factors <- read_delim("student_lifestyle_dataset.csv")
+study_habits <- read_delim("enhanced_student_habits_performance_dataset.csv")
+```
+
+```{r}
+study_habits <- study_habits %>%
+  sample_n(nrow(lifestyle_factors))
+```
+
+```{r}
+new_lifestyle <- lifestyle_factors %>%
+  mutate(study = Study_Hours_Per_Day, gpa = GPA) %>%
+  select(study, gpa)
+new_habits <- study_habits %>%
+  mutate(study = study_hours_per_day, gpa = previous_gpa) %>%
+  select(study, gpa)
+merged_data <- rbind(new_lifestyle, new_habits)
+```
+
+```{r}
+merged_data %>%
+  ggplot(aes(x = study, y = gpa)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = FALSE, color = "blue") +
+    labs(title = "Daily Study Hours vs GPA",
+         x = "Study (Hours)",
+         y = "GPA")
+```
+
+```{r}
+lifestyle_factors %>%
+    ggplot(aes(x = Physical_Activity_Hours_Per_Day, y = GPA)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, color = "blue") +
+    labs(title = "Daily Physical Activity Hours vs GPA",
+         x = "Physical Activity (Hours)",
+         y = "GPA")
+
+lifestyle_factors %>%
+    ggplot(aes(x = Social_Hours_Per_Day, y = GPA)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, color = "blue") +
+    labs(title = "Daily Social Hours vs GPA",
+         x = "Social (Hours)",
+         y = "GPA")
+
+study_habits %>%
+    ggplot(aes(x = netflix_hours, y = previous_gpa)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, color = "blue") +
+    labs(title = "Daily Netflix Hours vs GPA",
+         x = "Netflix (Hours)",
+         y = "GPA")
+
+study_habits %>%
+    ggplot(aes(x = attendance_percentage, y = previous_gpa)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, color = "blue") +
+    labs(title = "Attendance Percentage vs GPA",
+         x = "Attendance (Percentage)",
+         y = "GPA")
+```
+
+### research question 3: stress level research question, how does stress affect gpa across students 
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+```
+
+```{r, message = FALSE}
+sm<- read_delim("students_mental_health_survey.csv")
+```
+
+```{r}
+sm #just to look at data to see how it looks 
+```
+
+
+```{r, message = FALSE}
+sm2<- read_delim("mental_health_dataset.csv")
+```
+
+```{r}
+sm2 #just to look at data 
+```
+
+```{r}
+sm <- sm %>% 
+  select(CGPA, Stress_Level) %>% 
+  filter(!is.na(CGPA))
+
+
+sm2 <- sm2 %>% 
+  select(GPA, Stress_Level) %>% 
+  filter(!is.na(GPA))
+
+
+  sm <- sm %>% 
+  rename(
+    GPA = CGPA
+  )
+
+sm2 <- sm2 %>%
+  select(GPA, Stress_Level) %>%
+  mutate(
+    Stress_Level = ((Stress_Level - 1) / 4) * 5,
+  )
+
+
+
+sm #checking to make sure both look okay 
+sm2
+```
+
+```{r}
+combined_sm <- rbind(sm, sm2) #i use rbind to combine the rows, merge would not work for my dataset since it all has different people also no need to add new columns 
+
+combined_sm$stress_category <- cut( #had to search up how to categorize
+  combined_sm$Stress_Level,
+  breaks = c(-1, 2, 4, 6), #seperates the stress levels into categories between -1 to 2, 2 to 4, 4, to 6 aka low, medium, high 
+  labels = c("Low", "Medium", "High") #these are the categories names and it goes accordingly in order from the previous vector 
+)
+
+combined_sm # to take a look at the table 
+
+dim(combined_sm) # to make sure it looks correct and shows rows and columns 
+
+ ggplot(combined_sm, aes(Stress_Level, GPA)) + #plot uses my combined data with stress level and gpa 
+  geom_point(size = 1) + #makes size of dot to be 1 
+  geom_smooth(method = "loess", color = "red", se = FALSE) + #this is a loess curve, se = false removes unecessary shading, color is just set to red
+   labs(x = "Stress Level",
+        y = "GPA" )
+  
+ggplot(combined_sm, aes(Stress_Level, GPA)) +
+  geom_point(size = 1) +
+  geom_smooth(method = "loess", color = "red", se = FALSE) + 
+  coord_cartesian(ylim = c(3.3, 3.6)) + #had to search up how to zoom on graph but this function seems to zoom in on the y axis values from 3.3 to 3.6 using ylim. 
+   labs(x = "Stress Level",
+        y = "GPA")
+
+```
+
+### Analysis 
+
+Through this data processing, data cleaning, and plotting and using a Trendline, there is a relationship between stress level on the effect of GPA. There is an optimal amount of stress for GPA around level 2.5 as seen on the graph of stress which is considered a medium amount stress not too high and not too low. Which I think brings about a good environment for improved performance. If stress was too low then performance lowers since they care less, but if stress is too high then they will care too much and breakdown which leads to lower GPA. I did have some different scalings between data sets so it could account for some error in the middle but I normalized it as best as I could. 
+
+### research question 1 How does sleep effect GPA  
+
+```{r}
+data1 <- read_delim("students_mental_health_survey.csv") 
+data1
+
+
+data2 <- read_delim("student_lifestyle_dataset.csv")
+data2
+
+
+data1_prep <- data1 %>%
+  select(-Stress_Level)
+
+data2_prep <- data2 %>%
+  select(-Stress_Level)
+
+combined_data <- bind_rows(data1_prep, data2_prep)
+
+combined_data <- combined_data %>%
+  mutate(
+    GPA = if_else(
+      !is.na(GPA),
+      GPA,
+      CGPA
+    )
+  ) %>%
+  select(-CGPA)
+
+combined_data
+
+combined_data %>%
+  filter(!is.na(GPA) & !is.na(Sleep_Hours_Per_Day)) %>%
+  ggplot(aes(x = Sleep_Hours_Per_Day, y = GPA)) +
+  geom_point(color = "steelblue", alpha = 0.6) +
+  geom_smooth(method = "loess", color = "darkblue", se = FALSE, linewidth = 1.5) +
+  coord_cartesian(ylim = c(3.0, 3.2)) +
+  labs(
+    title = "GPA vs Sleep Hours Per Day (Zoomed on Trendline)",
+    x = "Sleep Hours Per Day",
+    y = "GPA"
+  ) 
+
+```
+
+### Analysis: 
+
+The curve reveals that GPA doesn't simply increase with more sleep. Instead, there's an optimal range. The "sweet spot": GPA appears to peak around 7-8 hours of sleep per day. Students sleeping in this range tend to have GPAs around 3.14. Too little sleep hurts: Students sleeping 5-6 hours show lower average GPAs (around 3.11-3.12). Too much sleep also correlates with lower GPA: Interestingly, students sleeping 9-10 hours also show declining GPAs, dropping back toward 3.10.
+
+citations: 
+used some chatgpt for bind rows. 
